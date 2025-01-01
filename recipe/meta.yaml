@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 66280811b09cde81e54e92dd4eafca15e5dc9d8890c37092c29a1e998363638a
 
 build:
@@ -14,15 +14,15 @@ build:
     - suxarray=suxarray.cli:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 
 requirements:
   host:
-    - python >=3.8,<3.11
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.8,<3.11
+    - python >={{ python_min }},<3.11
     - uxarray >=2023.4.1
     - netcdf4
     - shapely >=2.0
@@ -34,6 +34,7 @@ test:
     - suxarray
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
     - suxarray --help
