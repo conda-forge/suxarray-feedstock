@@ -1,13 +1,13 @@
 {% set name = "suxarray" %}
-{% set version = "0.1.3" %}
+{% set version = "2025.6.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 66280811b09cde81e54e92dd4eafca15e5dc9d8890c37092c29a1e998363638a
+  url: https://github.com/CADWRDeltaModeling/suxarray/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 07fcce642020c3451d47da6a9bc9ecbf02476c6e83a0e7ad3facf53890b7417f
 
 build:
   entry_points:
@@ -19,15 +19,15 @@ build:
 
 requirements:
   host:
-    - python >=3.8,<3.11
+    - python >=3.8,<=3.12
     - pip
   run:
-    - python >=3.8,<3.11
-    - uxarray >=2023.4.1
-    - netcdf4
+    - python >=3.8,<=3.12
+    - uxarray ==2025.6.0
     - shapely >=2.0
     - click >=7.0
-
+  run_constrained:
+    - vtk
 
 test:
   imports:
