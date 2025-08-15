@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/CADWRDeltaModeling/suxarray/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 07fcce642020c3451d47da6a9bc9ecbf02476c6e83a0e7ad3facf53890b7417f
+  sha256: 977ef6df2e028ade6fbef584bf0107a728bec3e735ee6cab0afaf18b2715b1f7
 
 build:
   entry_points:
