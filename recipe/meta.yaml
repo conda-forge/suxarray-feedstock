@@ -25,6 +25,7 @@ requirements:
     - python >=3.8,<=3.12
     - uxarray ==2025.6.0
     - shapely >=2.0
+    - geopandas
     - click >=7.0
   run_constrained:
     - vtk
