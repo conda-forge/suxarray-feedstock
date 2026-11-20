@@ -1,13 +1,13 @@
 {% set name = "suxarray" %}
-{% set version = "2025.6.0" %}
+{% set version = "2026.11.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/CADWRDeltaModeling/suxarray/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 977ef6df2e028ade6fbef584bf0107a728bec3e735ee6cab0afaf18b2715b1f7
+  url: https://github.com/CADWRDeltaModeling/suxarray/archive/v{{ version }}.tar.gz
+  sha256: 771d7ba6b94c69a39d912274dd1e61e2394572a0d66194247c152127e7d300be
 
 build:
   entry_points:
